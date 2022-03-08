@@ -10,6 +10,9 @@ const NavLinks = (props) => {
   return (
     <ul className="nav-links">
       <li>
+        <NavLink to="/home">HOME</NavLink>
+      </li>
+      <li>
         <NavLink to="/products">PRODUCTS</NavLink>
       </li>
       {auth.isLoggedIn && (
