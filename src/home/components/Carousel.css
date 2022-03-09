@@ -1,0 +1,9 @@
+.carousel {
+  display: flex;
+  flex-direction: row;
+  height: 22rem;
+}
+
+.carousel-image {
+  width: calc(100% / 3);
+}
