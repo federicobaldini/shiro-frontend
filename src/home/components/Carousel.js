@@ -1,28 +1,21 @@
 import React, { useState } from "react";
 
+import Card from "../../shared/components/UI/Card";
 import "./Carousel.css";
 
 const images = [
   {
     id: 1,
-    path: "https://taktcph.com/wp-content/uploads/2019/04/twitter-lineup.jpg",
+    path: "https://images.wallpaperscraft.com/image/single/sofa_furniture_interior_design_style_comfort_70000_3840x2160.jpg",
   },
   {
     id: 2,
-    path: "http://bonsaitonight.com/wp-content/uploads/2016/08/show-prep.jpg",
+    path: "https://images.wallpaperscraft.com/image/single/interior_yellow_office_121457_3840x2160.jpg",
   },
   {
     id: 3,
-    path: "https://www.mdfitalia.com/upload/product_cover/_2000x2000/hero-stable-marmo-ric-1L.jpg",
-  },
-  {
-    id: 4,
-    path: "http://bonsaitonight.com/wp-content/uploads/2016/08/show-prep.jpg",
-  },
-  {
-    id: 5,
-    path: "http://bonsaitonight.com/wp-content/uploads/2016/08/show-prep.jpg",
-  },
+    path: "https://images.wallpaperscraft.com/image/single/balcony_sofas_interior_design_apartment_room_suite_sea_ocean_landscape_penthouse_desk_tv_31421_3840x2160.jpg",
+  }
 ];
 
 const Carousel = () => {
@@ -47,22 +40,28 @@ const Carousel = () => {
 
   return (
     <div className="carousel">
-      <img
-        className="carousel-image"
-        src={images[getCurrentImageIndex(imageIndex)].path}
-        alt="left"
-      />
-      <img
-        className="carousel-image"
-        src={images[getCurrentImageIndex(imageIndex + 1)].path}
-        alt="middle"
-        onClick={() => shiftImageHandler(-1)}
-      />
-      <img
-        className="carousel-image"
-        src={images[getCurrentImageIndex(imageIndex + 2)].path}
-        alt="right"
-      />
+      <Card className="carousel-image-card carousel-image-card__left">
+        <img
+          className="carousel-image"
+          src={images[getCurrentImageIndex(imageIndex)].path}
+          alt="left"
+        />
+      </Card>
+      <Card className="carousel-image-card carousel-image-card__middle">
+        <img
+          className="carousel-image"
+          src={images[getCurrentImageIndex(imageIndex + 1)].path}
+          alt="middle"
+          onClick={() => shiftImageHandler(-1)}
+        />
+      </Card>
+      <Card className="carousel-image-card carousel-image-card__right">
+        <img
+          className="carousel-image"
+          src={images[getCurrentImageIndex(imageIndex + 2)].path}
+          alt="right"
+        />
+      </Card>
     </div>
   );
 };

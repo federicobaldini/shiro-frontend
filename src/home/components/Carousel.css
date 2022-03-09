@@ -1,9 +1,27 @@
 .carousel {
   display: flex;
   flex-direction: row;
-  height: 22rem;
+  height: 24rem;
 }
 
 .carousel-image {
-  width: calc(100% / 3);
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-image-card {
+  width: 50rem;
+  padding: 0;
+}
+
+.carousel-image-card__middle {
+  margin: 0 1rem;
+}
+
+.carousel-image-card__left {
+  opacity: 0.3;
+}
+
+.carousel-image-card__right {
+  opacity: 0.3;
 }
