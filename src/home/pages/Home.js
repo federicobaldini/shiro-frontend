@@ -1,8 +1,6 @@
 import React from "react";
 
-import Carousel from "../components/Carousel";
 import MenuList from "../components/MenuList";
-import Card from "../../shared/components/UI/Card";
 import "./Home.css";
 
 const images = [
@@ -35,8 +33,6 @@ const images = [
 const Home = () => {
   return (
     <div className="home">
-      <Carousel show={3} infiniteLoop={true} images={images}>
-      </Carousel>
       <MenuList />
     </div>
   );
