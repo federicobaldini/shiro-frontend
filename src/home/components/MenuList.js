@@ -6,8 +6,10 @@ import "./MenuList.css";
 const MenuList = () => {
   return (
     <div>
+      {/*
       <h1>MenuList Works!</h1>
       <MenuItem />
+      */}
     </div>
   );
 };
