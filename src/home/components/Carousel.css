@@ -1,7 +1,7 @@
 .carousel-container {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .carousel-wrapper {
@@ -18,6 +18,9 @@
 
 .carousel-content {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 28rem;
   transition: all 0.4s ease;
   margin: 0 0.5rem;
   -ms-overflow-style: none; /* hide scrollbar in IE and Edge */
@@ -41,8 +44,8 @@
 }
 
 .carousel-content.show-3 > * {
-  left: 17.5rem;
-  width: 52rem;
+  left: 20%;
+  max-width: 52rem;
 }
 
 .carousel-content.show-4 > * {
@@ -68,6 +71,40 @@
 
 .right-arrow {
   right: 24px;
+}
+
+.carousel-image {
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-card {
+  height: 24rem;
+  padding: 0;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  transition: all 0.4s ease;
+}
+
+.carousel-card__middle {
+  width: 54rem !important;
+  height: 26rem !important;
+}
+
+.carousel-card__left {
+  opacity: 0.5;
+}
+
+.carousel-card__left:hover {
+  opacity: 1;
+}
+
+.carousel-card__right {
+  opacity: 0.5;
+}
+
+.carousel-card__right:hover {
+  opacity: 1;
 }
 
 @media (hover: none) and (pointer: coarse) {

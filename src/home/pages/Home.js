@@ -35,14 +35,7 @@ const images = [
 const Home = () => {
   return (
     <div className="home">
-      <Carousel show={3} infiniteLoop={true}>
-        {images.map((image, index) => {
-          return (
-            <Card key={image.id} className="carousel-card">
-              <img className="carousel-image" src={image.path} alt="product" />
-            </Card>
-          );
-        })}
+      <Carousel show={3} infiniteLoop={true} images={images}>
       </Carousel>
       <MenuList />
     </div>

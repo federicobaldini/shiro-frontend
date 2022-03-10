@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from "react";
+
+import Card from "../../shared/components/UI/Card";
 import "./Carousel.css";
 
 const Carousel = (props) => {
-  const { children, show, infiniteLoop } = props;
+  const { show, infiniteLoop, images } = props;
 
   const [currentIndex, setCurrentIndex] = useState(infiniteLoop ? show : 0);
-  const [length, setLength] = useState(children.length);
+  const [length, setLength] = useState(images.length);
 
   const [isRepeating, setIsRepeating] = useState(
-    infiniteLoop && children.length > show
+    infiniteLoop && images.length > show
   );
   const [transitionEnabled, setTransitionEnabled] = useState(true);
 
   const [touchPosition, setTouchPosition] = useState(null);
 
-  // Set the length to match current children from props
+  // Set the length to match current images from props
   useEffect(() => {
-    setLength(children.length);
-    setIsRepeating(infiniteLoop && children.length > show);
-  }, [children, infiniteLoop, show]);
+    setLength(images.length);
+    setIsRepeating(infiniteLoop && images.length > show);
+  }, [images, infiniteLoop, show]);
 
   useEffect(() => {
     if (isRepeating) {
@@ -67,7 +69,6 @@ const Carousel = (props) => {
   };
 
   const handleTransitionEnd = () => {
-    console.log("END TRANSITION");
     if (isRepeating) {
       if (currentIndex === 0) {
         setTransitionEnabled(false);
@@ -82,7 +83,7 @@ const Carousel = (props) => {
   const renderExtraPrev = () => {
     let output = [];
     for (let index = 0; index < show; index++) {
-      output.push(children[length - 1 - index]);
+      output.push(images[length - 1 - index]);
     }
     output.reverse();
     return output;
@@ -91,19 +92,37 @@ const Carousel = (props) => {
   const renderExtraNext = () => {
     let output = [];
     for (let index = 0; index < show; index++) {
-      output.push(children[index]);
+      output.push(images[index]);
     }
     return output;
+  };
+
+  const getCard = (image, index) => {
+    return (
+      <Card
+        key={image.id}
+        className={
+          "carousel-card" +
+          ((index === currentIndex - show || index === currentIndex
+            ? " carousel-card__middle"
+            : "") ||
+            (index < currentIndex - show ? " carousel-card__left" : "") ||
+            (index > currentIndex - show ? " carousel-card__right" : ""))
+        }
+        onClick={() => {
+          console.log(index + " / " + currentIndex);
+          index < currentIndex - show && prev();
+          index > currentIndex - show && next();
+        }}
+      >
+        <img className="carousel-image" src={image.path} alt="product" />
+      </Card>
+    );
   };
 
   return (
     <div className="carousel-container">
       <div className="carousel-wrapper">
-        {(isRepeating || currentIndex > 0) && (
-          <button onClick={prev} className="left-arrow" disabled={!transitionEnabled}>
-            &lt;
-          </button>
-        )}
         <div
           className="carousel-content-wrapper"
           onTouchStart={handleTouchStart}
@@ -117,16 +136,21 @@ const Carousel = (props) => {
             }}
             onTransitionEnd={() => handleTransitionEnd()}
           >
-            {length > show && isRepeating && renderExtraPrev()}
-            {children}
-            {length > show && isRepeating && renderExtraNext()}
+            {length > show &&
+              isRepeating &&
+              renderExtraPrev().map((image, index) => {
+                return getCard(image, index);
+              })}
+            {images.map((image, index) => {
+              return getCard(image, index);
+            })}
+            {length > show &&
+              isRepeating &&
+              renderExtraNext().map((image, index) => {
+                return getCard(image, index);
+              })}
           </div>
         </div>
-        {(isRepeating || currentIndex < length - show) && (
-          <button onClick={next} className="right-arrow" disabled={!transitionEnabled}>
-            &gt;
-          </button>
-        )}
       </div>
     </div>
   );
