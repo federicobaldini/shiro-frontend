@@ -8,7 +8,7 @@ const Showcase = (props) => {
 
   const [actualIndex, setActualIndex] = useState(0);
   const [elements, setElements] = useState(images);
-  const [transitionEnabled, setTransitionEnabled] = useState(true);
+  const [transitionEnabled, setTransitionEnabled] = useState(false);
 
   const shiftElementHandler = (offset) => {
     let newIndex = actualIndex + offset;
@@ -43,7 +43,14 @@ const Showcase = (props) => {
             <Card
               key={element.id}
               className={
-                "showcase-item" + (index === 2 ? " showcase-item-middle" : "")
+                "showcase-item" +
+                (!transitionEnabled
+                  ? index === 2
+                    ? " showcase-item-middle"
+                    : ""
+                  : "") +
+                (index === 3 ? " showcase-item-right" : "") +
+                (index === 1 ? " showcase-item-left" : "") 
               }
             >
               <img
