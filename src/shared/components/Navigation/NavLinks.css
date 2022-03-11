@@ -19,15 +19,15 @@
   color: #000000;
   text-decoration: none;
   padding: 0.5rem 1rem;
-  transition: 0.3s;
+  transition: all 0.4s;
   border-radius: 10px;
 }
 
 .nav-links a:hover,
 .nav-links a:active,
 .nav-links a.active {
-  background: #ecf0f1;
-  color: #000000;
+  background: #000000;
+  color: #ecf0f1;
 }
 
 .nav-links button {
@@ -37,7 +37,7 @@
   background: transparent;
   padding: 0.5rem 1rem;
   font: inherit;
-  transition: 0.3s;
+  transition: all 0.4s;
   border-radius: 10px;
 }
 
@@ -48,7 +48,7 @@
 .nav-links button:hover,
 .nav-links button:active {
   background: #000000;
-  color: white;
+  color: #ecf0f1;
 }
 
 @media (min-width: 768px) {
@@ -61,19 +61,19 @@
   }
 
   .nav-links a {
-    color: white;
+    color: #000000;
     text-decoration: none;
   }
 
   .nav-links button {
     border: 1px solid white;
-    color: white;
+    color: #000000;
     background: transparent;
   }
 
   .nav-links button:hover,
   .nav-links button:active {
-    background: #ecf0f1;
-    color: #000000;
+    background: #000000;
+    color: #ecf0f1;
   }
 }

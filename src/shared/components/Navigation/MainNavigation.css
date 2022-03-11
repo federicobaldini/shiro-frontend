@@ -18,12 +18,12 @@
 }
 
 .main-navigation__title {
-  color: white;
+  color: #000000;
 }
 
 .main-navigation__title a {
   text-decoration: none;
-  color: white;
+  color: #000000;
 }
 
 .main-navigation__header-nav {
