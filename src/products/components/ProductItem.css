@@ -1,0 +1,17 @@
+.product-item {
+  height: 15rem;
+  width: 15rem;
+  margin: 1rem;
+  border-radius: 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.product-item:hover {
+  height: 16rem;
+  width: 16rem;
+}
