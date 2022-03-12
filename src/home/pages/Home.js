@@ -2,6 +2,7 @@ import React from "react";
 
 import Showcase from "../components/Showcase";
 import MenuList from "../components/MenuList";
+import ProductList from "../../products/components/ProductList";
 import "./Home.css";
 
 const images = [
@@ -32,11 +33,30 @@ const images = [
   },
 ];
 
+const products = [
+  {
+    id: 1,
+    path: "http://assets.stickpng.com/thumbs/58f3736ea4fa116215a92403.png",
+    color: "pink",
+  },
+  {
+    id: 2,
+    path: "http://assets.stickpng.com/thumbs/58f37330a4fa116215a923fc.png",
+    color: "yellow",
+  },
+  {
+    id: 3,
+    path: "http://assets.stickpng.com/thumbs/58f3733fa4fa116215a923fe.png",
+    color: "red",
+  },
+];
+
 const Home = () => {
   return (
     <div className="home">
       <Showcase images={images} />
       <MenuList />
+      <ProductList products={products} />
     </div>
   );
 };
