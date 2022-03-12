@@ -35,9 +35,12 @@ const MainNavigation = (props) => {
           <span></span>
           <span></span>
         </button>
-        <h1 className="main-navigation__title">
-          <Link to="/">Plain Store</Link>
-        </h1>
+        <div className="main-navigation__header-info">
+          <div className="main-navigation__logo">白</div>
+          <h1 className="main-navigation__title">
+            <Link to="/">SHIRO</Link>
+          </h1>
+        </div>
         <nav className="main-navigation__header-nav">
           <NavLinks />
         </nav>
