@@ -12,6 +12,14 @@ const Showcase = (props) => {
   const [shiftRight, setShiftRight] = useState(false);
   const [shiftLeft, setShiftLeft] = useState(false);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      shiftElementHandler(-1);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const shiftElementHandler = (offset) => {
     let newIndex = actualIndex + offset;
     if (offset < 0) {
