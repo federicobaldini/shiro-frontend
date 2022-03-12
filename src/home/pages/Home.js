@@ -36,17 +36,20 @@ const images = [
 const products = [
   {
     id: 1,
-    path: "http://assets.stickpng.com/thumbs/58f3736ea4fa116215a92403.png",
+    path: "https://www.pngarts.com/files/3/Chair-PNG-Image-With-Transparent-Background.png",
+    description: "Lorem ipsum dolor sit amet, consectetur",
     color: "pink",
   },
   {
     id: 2,
-    path: "http://assets.stickpng.com/thumbs/58f37330a4fa116215a923fc.png",
+    path: "https://jacqueshitier.com/wp-content/uploads/2021/01/jacques-hitier-low-coffee-table-basse-n-34.jpg",
+    description: "Lorem ipsum dolor sit amet, consectetur",
     color: "yellow",
   },
   {
     id: 3,
-    path: "http://assets.stickpng.com/thumbs/58f3733fa4fa116215a923fe.png",
+    path: "https://i.pinimg.com/originals/ff/4b/36/ff4b36b7126bcde9f47d48cd84c0d64c.png",
+    description: "Lorem ipsum dolor sit amet, consectetur",
     color: "red",
   },
 ];
@@ -55,7 +58,6 @@ const Home = () => {
   return (
     <div className="home">
       <Showcase images={images} />
-      <MenuList />
       <ProductList products={products} />
     </div>
   );

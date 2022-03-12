@@ -14,7 +14,7 @@ const ProductItem = (props) => {
         style={{ width: "66%", height: "66%", padding: "1rem" }}
       />
       <div style={{ width: "100%", height: "33%", padding: "1rem" }}>
-        Lorem ipsum dolor sit amet, consectetur
+        {product.description}
       </div>
     </Card>
   );
