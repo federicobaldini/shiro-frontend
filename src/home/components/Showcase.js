@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 import Card from "../../shared/components/UI/Card";
 import "./Showcase.css";
 
 const Showcase = (props) => {
-  const { images } = props;
+  const { images, animation } = props;
+  const halfImagesLength = parseInt(images.length / 2);
 
   const [actualIndex, setActualIndex] = useState(0);
   const [elements, setElements] = useState(images);
@@ -12,15 +13,7 @@ const Showcase = (props) => {
   const [shiftRight, setShiftRight] = useState(false);
   const [shiftLeft, setShiftLeft] = useState(false);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      shiftElementHandler(-1);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const shiftElementHandler = (offset) => {
+  const shiftElementHandler = useCallback((offset) => {
     let newIndex = actualIndex + offset;
     if (offset < 0) {
       setShiftRight(true);
@@ -31,7 +24,19 @@ const Showcase = (props) => {
     }
     setActualIndex(newIndex);
     setTransitionEnabled(true);
-  };
+  }, []);
+
+  useEffect(() => {
+    if (animation) {
+      let interval = () => {};
+      if (actualIndex === 0) {
+        interval = setInterval(() => {
+          shiftElementHandler(-1);
+        }, 4000);
+      }
+      return () => clearInterval(interval);
+    }
+  }, [actualIndex, shiftElementHandler, animation]);
 
   const getNewElementId = (oldId) => {
     let newId = 0;
@@ -88,14 +93,20 @@ const Showcase = (props) => {
               className={
                 "showcase-item" +
                 (!transitionEnabled
-                  ? (index === 2 ? " showcase-item-middle" : "") ||
-                    (index === 3 ? " showcase-item-right" : "") ||
-                    (index === 1 ? " showcase-item-left" : "")
+                  ? (index === halfImagesLength
+                      ? " showcase-item-middle"
+                      : "") ||
+                    (index === halfImagesLength + 1
+                      ? " showcase-item-right"
+                      : "") ||
+                    (index === halfImagesLength - 1
+                      ? " showcase-item-left"
+                      : "")
                   : "")
               }
               onClick={() => {
-                index === 3 && shiftElementHandler(-1);
-                index === 1 && shiftElementHandler(1);
+                index === halfImagesLength + 1 && shiftElementHandler(-1);
+                index === halfImagesLength - 1 && shiftElementHandler(1);
               }}
             >
               <img
