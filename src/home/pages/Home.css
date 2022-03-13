@@ -12,3 +12,13 @@
   height: 100%;
   width: 100%;
 }
+
+.home-products__title {
+  font-size: 40px;
+  margin: 1rem 0;
+}
+
+.home-products__title-line {
+  width: 80%;
+  border-bottom: 2px solid #d7dbdd;
+}
