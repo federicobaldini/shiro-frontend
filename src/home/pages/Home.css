@@ -15,10 +15,18 @@
 
 .home-products__title {
   font-size: 40px;
-  margin: 1rem 0;
+  margin: 0 0 1rem 0;
+  text-align: center;
+  color: #000000;
 }
 
 .home-products__title-line {
   width: 80%;
   border-bottom: 2px solid #d7dbdd;
+}
+
+@media (max-width: 768px) {
+  .home-products__title {
+    margin: 1rem 0;
+  }
 }
