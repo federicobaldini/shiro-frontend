@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Auth from "./user/pages/Auth";
 import Home from "./home/pages/Home";
-import MainNavigation from "./shared/components/Navigation/MainNavigation";
+import MainNavigation from "./shared/components/navigation/MainNavigation";
 import Products from "./products/pages/Products";
+import ProductDetail from "./products/pages/ProductDetail";
 import { AuthContext } from "./shared/context/auth-context";
 import { useAuth } from "./shared/hooks/auth-hook";
 
@@ -18,6 +19,7 @@ const App = () => {
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/products/:productId" element={<ProductDetail />} />
         <Route path="*" element={<Home />} />
       </Routes>
     );
@@ -26,6 +28,7 @@ const App = () => {
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/products/:productId" element={<ProductDetail />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="*" element={<Home />} />
       </Routes>
