@@ -11,14 +11,25 @@
   transition: all 0.4s;
 }
 
+.product-item a {
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: #000000;
+}
+
 .product-item:hover {
   height: 26rem;
   width: 26rem;
 }
 
-.product-item__image {
-  width: 60%;
+.product-item__image-container {
+  display: flex;
+  justify-content: center;
   height: 60%;
+}
+
+.product-item__image {
   padding: 1rem;
 }
 
@@ -70,4 +81,10 @@
   background: #e74c3c;
   width: 6rem;
   border-radius: 20px;
+}
+
+.product-item__button:hover {
+  background: #ecf0f1;
+  color: #000000;
+  border-color: #ecf0f1;
 }
