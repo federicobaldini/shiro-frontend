@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 
-import Card from "../../shared/components/UI/Card";
+import Card from "../../shared/components/ui/Card";
 import "./Showcase.css";
 
 const Showcase = (props) => {
@@ -108,13 +108,11 @@ const Showcase = (props) => {
                 index === halfImagesLength + 1 && shiftElementHandler(-1);
                 index === halfImagesLength - 1 && shiftElementHandler(1);
               }}
-            >
-              <img
-                className="showcase-item-image"
-                src={element.path}
-                alt="product"
-              />
-            </Card>
+              style={{
+                backgroundImage: "url('" + element.path + "')",
+                backgroundSize: "100% 100%",
+              }}
+            />
           );
         })}
       </div>
