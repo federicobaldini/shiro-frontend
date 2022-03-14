@@ -1,8 +1,8 @@
 import React from "react";
 
 import Showcase from "../components/Showcase";
-import MenuList from "../components/MenuList";
 import ProductList from "../../products/components/ProductList";
+import SearchBar from "../../shared/components/searchbar/SearchBar";
 import "./Home.css";
 
 const images = [
@@ -53,6 +53,7 @@ const products = [
 const Home = () => {
   return (
     <div className="home">
+      <SearchBar />
       <Showcase images={images} animation={false} />
       <div className="home-products__title">
         Choose your{" "}
