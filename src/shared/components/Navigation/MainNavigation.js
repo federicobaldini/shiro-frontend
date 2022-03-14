@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import MainHeader from "./MainHeader";
 import NavLinks from "./NavLinks";
 import SideDrawer from "./SideDrawer";
-import Backdrop from "../UI/Backdrop";
+import Backdrop from "../ui/Backdrop";
 import "./MainNavigation.css";
 
 const MainNavigation = (props) => {

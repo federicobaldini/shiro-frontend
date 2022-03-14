@@ -1,11 +1,11 @@
 import React, { useState, useContext } from "react";
 
-import Card from "../../shared/components/UI/Card";
-import Input from "../../shared/components/Form/Input";
-import Button from "../../shared/components/Form/Button";
-import ErrorModal from "../../shared/components/UI/ErrorModal";
-import LoadingSpinner from "../../shared/components/UI/LoadingSpinner";
-import ImageUpload from "../../shared/components/Form/ImageUpload";
+import Card from "../../shared/components/ui/Card";
+import Input from "../../shared/components/form/Input";
+import Button from "../../shared/components/form/Button";
+import ErrorModal from "../../shared/components/ui/ErrorModal";
+import LoadingSpinner from "../../shared/components/ui/LoadingSpinner";
+import ImageUpload from "../../shared/components/form/ImageUpload";
 import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
