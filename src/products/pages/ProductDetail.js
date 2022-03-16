@@ -5,6 +5,8 @@ import ErrorModal from "../../shared/components/ui/ErrorModal";
 import LoadingSpinner from "../../shared/components/ui/LoadingSpinner";
 import Card from "../../shared/components/ui/Card";
 import Button from "../../shared/components/form/Button";
+import ColorSelector from "../components/ColorSelector";
+import CustomSelector from "../components/CustomSelector";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import "./ProductDetail.css";
 
@@ -27,10 +29,10 @@ const ProductDetail = () => {
               price: "150$",
               releaseDate: "2022-03-01T00:00:00.000Z",
               description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
               colors: [
-                { name: "red", code: "red" },
-                { name: "green", code: "green" },
+                { name: "blue sky", code: "#5DADE2" },
+                { name: "yellow lemon", code: "#F7DC6F" },
               ],
               sizes: [
                 { name: "M", value: "M" },
@@ -79,42 +81,33 @@ const ProductDetail = () => {
               <div className="product-detail__description">
                 {loadedProducts[0].description}
               </div>
-              <form className="product-detail__form" id="orderform">
-                <div className="product-detail__colors">
-                  <select name="Colors" id="colors">
-                    {loadedProducts[0].colors.map((color) => {
-                      return (
-                        <option key={color.code} value={color.code}>
-                          {color.name}
-                        </option>
-                      );
-                    })}
-                  </select>
+              <form className="product-detail__form">
+                <ColorSelector
+                  className="product-detail__colors"
+                  colors={loadedProducts[0].colors}
+                />
+                <div className="product-detail__select-container">
+                  <CustomSelector
+                    className="product-detail__select"
+                    label="Size"
+                    items={loadedProducts[0].sizes}
+                  />
+                  <CustomSelector
+                    className="product-detail__select"
+                    label="Quantity"
+                    items={[
+                      { name: 1, value: 1 },
+                      { name: 2, value: 2 },
+                      { name: 3, value: 3 },
+                    ]}
+                  />
                 </div>
-                <div className="product-detail__sizes">
-                  <select name="Sizes" id="sizes">
-                    {loadedProducts[0].sizes.map((size) => {
-                      return (
-                        <option key={size.value} value={size.value}>
-                          {size.name}
-                        </option>
-                      );
-                    })}
-                  </select>
+                <div className="product-detail-button-container">
+                  <Button className="product-detail__button">
+                    ADD TO CART
+                  </Button>
+                  <Button className="product-detail__button">BUY NOW</Button>
                 </div>
-                <div className="product-detail__quantity">
-                  <select name="Quantity" id="quantity">
-                    <option value={1}>1</option>
-                    {loadedProducts[0].quantity > 1 && (
-                      <option value={2}>2</option>
-                    )}
-                    {loadedProducts[0].quantity > 2 && (
-                      <option value={3}>3</option>
-                    )}
-                  </select>
-                </div>
-                <Button className="product-detail__button">ADD TO CART</Button>
-                <Button className="product-detail__button">BUY NOW</Button>
               </form>
             </div>
           </Card>
