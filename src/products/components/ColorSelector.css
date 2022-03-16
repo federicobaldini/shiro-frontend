@@ -1,0 +1,40 @@
+.color-selector {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.color-selector__item {
+  height: 3.2rem;
+  width: 7rem;
+  border-radius: 5px;
+  margin: 0 0.5rem;
+  padding: 0;
+  box-shadow: none;
+  border: 1px solid #909497;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.2s;
+}
+
+.color-selector__item:hover {
+  opacity: 1;
+}
+
+.color-selector__item-active {
+  opacity: 1;
+}
+
+.color-selector__item-color {
+  height: 50%;
+  width: 100%;
+}
+
+.color-selector__item-name {
+  height: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  padding-top: 0.2rem;
+}
