@@ -56,9 +56,9 @@ const Home = () => {
       <SearchBar />
       <Showcase images={images} animation={false} />
       <div className="home-products__title">
-        Choose your{" "}
-        <span style={{ color: "#e74c3c" }}>new</span>{" "}
-        product
+        CHOOSE YOUR{" "}
+        <span style={{ color: "#e74c3c" }}>NEW</span>{" "}
+        PRODUCT
       </div>
       <div className="home-products__title-line"></div>
       <ProductList products={products} />
