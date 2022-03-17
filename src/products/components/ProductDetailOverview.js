@@ -21,6 +21,7 @@ const ProductDetailOverview = (props) => {
         {product.imagesPath.map((imagePath) => {
           return (
             <img
+              key={imagePath}
               className="product-detail-overview__side-image"
               src={imagePath}
               alt="product"
@@ -41,7 +42,7 @@ const ProductDetailOverview = (props) => {
         <div className="product-detail-overview__name">
           {product.name.toUpperCase()}
         </div>
-        <div className="product-detail-overview__price">{product.price}</div>
+        <div className="product-detail-overview__price">{"$" + product.price}</div>
         <div className="product-detail-overview__description">
           {product.description}
         </div>
