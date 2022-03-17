@@ -7,7 +7,7 @@ const CustomSelector = (props) => {
 
   const [selectedValue, setSelectedValue] = useState("");
 
-  const handleOnChange = (e) => {
+  const changeOptionHandler = (e) => {
     setSelectedValue(e.target.value);
   };
 
@@ -19,7 +19,7 @@ const CustomSelector = (props) => {
       <select
         id={label}
         value={selectedValue}
-        onChange={(e) => handleOnChange(e)}
+        onChange={(e) => changeOptionHandler(e)}
       >
         <option hidden disabled value=""></option>
         {items.map((item) => {

@@ -8,7 +8,7 @@ const ColorSelector = (props) => {
 
   const [selectedValue, setSelectedValue] = useState("");
 
-  const handleOnClick = (code) => {
+  const selectColorHandler = (code) => {
     setSelectedValue(code);
   };
 
@@ -24,7 +24,7 @@ const ColorSelector = (props) => {
                 ? "color-selector__item-active"
                 : "")
             }
-            onClick={() => handleOnClick(color.code)}
+            onClick={() => selectColorHandler(color.code)}
           >
             <div
               className="color-selector__item-color"
