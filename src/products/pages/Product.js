@@ -3,7 +3,10 @@ import { useParams } from "react-router-dom";
 
 import ErrorModal from "../../shared/components/ui/ErrorModal";
 import LoadingSpinner from "../../shared/components/ui/LoadingSpinner";
-import ProductDetail from "../components/ProductDetail";
+import ProductDetailOverview from "../components/ProductDetailOverview";
+import ProductDetailInfo from "../components/ProductDetailInfo";
+import ProductShippingInfo from "../components/ProductShippingInfo";
+import ProductReviewsInfo from "../components/ProductReviewsInfo";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import "./Product.css";
 
@@ -20,8 +23,11 @@ const Product = () => {
           products: [
             {
               id: 2,
-              imagePath:
+              imagesPath: [
                 "https://jacqueshitier.com/wp-content/uploads/2021/01/jacques-hitier-low-coffee-table-basse-n-34.jpg",
+                "https://www.pngarts.com/files/3/Chair-PNG-Image-With-Transparent-Background.png",
+                "https://i.pinimg.com/originals/ff/4b/36/ff4b36b7126bcde9f47d48cd84c0d64c.png",
+              ],
               name: "Wooden table",
               price: "150$",
               releaseDate: "2022-03-01T00:00:00.000Z",
@@ -59,7 +65,22 @@ const Product = () => {
           <LoadingSpinner />
         </div>
       ) : (
-        loadedProducts[0] && <ProductDetail product={loadedProducts[0]} />
+        <div className="product">
+          {loadedProducts[0] && (
+            <ProductDetailOverview product={loadedProducts[0]} />
+          )}
+          <div className="product-info">
+            <div className="product-info__shipping">
+              <ProductShippingInfo />
+            </div>
+            <div className="product-info__details">
+              <ProductDetailInfo />
+            </div>
+            <div className="product-info__reviews">
+              <ProductReviewsInfo />
+            </div>
+          </div>
+        </div>
       )}
     </React.Fragment>
   );
