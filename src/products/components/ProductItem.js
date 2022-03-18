@@ -29,7 +29,7 @@ const ProductItem = (props) => {
           />
         </div>
         <div className="product-item__info-bottom">
-          <div className="product-item__price">{product.price}</div>
+          <div className="product-item__price">{"$" + product.price}</div>
           <div className="product-item__button-container">
             <Button className="product-item__button">BUY</Button>
           </div>

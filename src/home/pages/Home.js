@@ -29,7 +29,7 @@ const products = [
     imagePath:
       "https://www.pngarts.com/files/3/Chair-PNG-Image-With-Transparent-Background.png",
     name: "Black chair",
-    price: "60$",
+    price: 60,
     releaseDate: "2022-03-01T00:00:00.000Z",
   },
   {
@@ -37,7 +37,7 @@ const products = [
     imagePath:
       "https://jacqueshitier.com/wp-content/uploads/2021/01/jacques-hitier-low-coffee-table-basse-n-34.jpg",
     name: "Wooden table",
-    price: "150$",
+    price: 150,
     releaseDate: "2022-03-01T00:00:00.000Z",
   },
   {
@@ -45,7 +45,7 @@ const products = [
     imagePath:
       "https://i.pinimg.com/originals/ff/4b/36/ff4b36b7126bcde9f47d48cd84c0d64c.png",
     name: "Grey sofa",
-    price: "400$",
+    price: 400,
     releaseDate: "2022-02-01T00:00:00.000Z",
   },
 ];
@@ -56,9 +56,7 @@ const Home = () => {
       <SearchBar />
       <Showcase images={images} animation={false} />
       <div className="home-products__title">
-        CHOOSE YOUR{" "}
-        <span style={{ color: "#e74c3c" }}>NEW</span>{" "}
-        PRODUCT
+        CHOOSE YOUR <span style={{ color: "#e74c3c" }}>NEW</span> PRODUCT
       </div>
       <div className="home-products__title-line"></div>
       <ProductList products={products} />
