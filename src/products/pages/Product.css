@@ -28,3 +28,29 @@
 .product-info__reviews {
   width: 30%;
 }
+
+@media (max-width: 768px) {
+  .product {
+    margin: 0rem;
+  }
+
+  .product-info {
+    min-width: 0px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-info__shipping {
+    width: 100%;
+  }
+
+  .product-info__details {
+    width: 100%;
+  }
+
+  .product-info__reviews {
+    width: 100%;
+  }
+}
