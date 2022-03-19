@@ -3,6 +3,7 @@ import React from "react";
 import Showcase from "../components/Showcase";
 import ProductList from "../../products/components/ProductList";
 import SearchBar from "../../shared/components/searchbar/SearchBar";
+import MenuList from "../components/MenuList";
 import "./Home.css";
 
 const images = [
@@ -46,8 +47,14 @@ const products = [
       "https://i.pinimg.com/originals/ff/4b/36/ff4b36b7126bcde9f47d48cd84c0d64c.png",
     name: "Grey sofa",
     price: 400,
-    releaseDate: "2022-02-01T00:00:00.000Z",
+    releaseDate: "2022-03-01T00:00:00.000Z",
   },
+];
+
+const categories = [
+  { id: 1, name: "chairs", imagePath: "" },
+  { id: 2, name: "tables", imagePath: "" },
+  { id: 3, name: "sofas", imagePath: "" },
 ];
 
 const Home = () => {
@@ -55,11 +62,14 @@ const Home = () => {
     <div className="home">
       <SearchBar />
       <Showcase images={images} animation={false} />
-      <div className="home-products__title">
-        CHOOSE YOUR <span style={{ color: "#e74c3c" }}>NEW</span> PRODUCT
-      </div>
       <div className="home-products__title-line"></div>
+      <div className="home-products__title">
+        DISCOVER <span style={{ color: "#e74c3c" }}>NEW</span> PRODUCTS
+      </div>
       <ProductList products={products} />
+      <div className="home-products__title">WHAT ARE YOU SEARCHING FOR?</div>
+      <div className="home-products__title-line"></div>
+      <MenuList categories={categories} />
     </div>
   );
 };
