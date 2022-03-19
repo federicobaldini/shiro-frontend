@@ -1,0 +1,32 @@
+.menu-item {
+  height: 18rem;
+  width: 18rem;
+  margin: 1rem;
+  border-radius: 20px;
+  padding: 0;
+
+  transition: all 0.4s;
+}
+
+.menu-item a {
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: #000000;
+}
+
+.menu-item:hover {
+  height: 19rem;
+  width: 19rem;
+}
+
+.menu-item__title {
+  font-size: 21px;
+  font-weight: bold;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
