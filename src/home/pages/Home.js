@@ -2,7 +2,6 @@ import React from "react";
 
 import Showcase from "../components/Showcase";
 import ProductList from "../../products/components/ProductList";
-import SearchBar from "../../shared/components/searchbar/SearchBar";
 import MenuList from "../components/MenuList";
 import "./Home.css";
 
@@ -60,16 +59,14 @@ const categories = [
 const Home = () => {
   return (
     <div className="home">
-      <SearchBar />
       <Showcase images={images} animation={false} />
-      <div className="home-products__title-line"></div>
+      {/* <div className="home-products__title">WHAT ARE YOU SEARCHING FOR?</div> */}
+      {/* <MenuList categories={categories} /> */}
       <div className="home-products__title">
         DISCOVER <span style={{ color: "#e74c3c" }}>NEW</span> PRODUCTS
       </div>
-      <ProductList products={products} />
-      <div className="home-products__title">WHAT ARE YOU SEARCHING FOR?</div>
       <div className="home-products__title-line"></div>
-      <MenuList categories={categories} />
+      <ProductList products={products} />
     </div>
   );
 };

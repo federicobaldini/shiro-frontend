@@ -1,6 +1,6 @@
 .menu-item {
-  height: 18rem;
-  width: 18rem;
+  height: 17rem;
+  width: 17rem;
   margin: 1rem;
   border-radius: 20px;
   padding: 0;
@@ -16,8 +16,8 @@
 }
 
 .menu-item:hover {
-  height: 19rem;
-  width: 19rem;
+  height: 18rem;
+  width: 18rem;
 }
 
 .menu-item__title {

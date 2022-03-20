@@ -1,6 +1,6 @@
 .product-item {
-  height: 18rem;
-  width: 18rem;
+  height: 17rem;
+  width: 17rem;
   margin: 1rem;
   border-radius: 20px;
   padding: 0;
@@ -15,8 +15,8 @@
 }
 
 .product-item:hover {
-  height: 19rem;
-  width: 19rem;
+  height: 18rem;
+  width: 18rem;
 }
 
 .product-item__image-container {
