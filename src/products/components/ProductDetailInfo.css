@@ -1,5 +1,5 @@
 .product-detail-info {
-  height: 12rem;
+  min-height: 12rem;
   margin: 0.5rem;
   overflow-y: auto;
 }
