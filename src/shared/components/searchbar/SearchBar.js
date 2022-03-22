@@ -40,16 +40,18 @@ const SearchBar = (props) => {
     navigate("products", {
       state: { text: inputText },
     });
+    setInputTextIsFocus(false);
   };
 
   const focusInputTextHandler = () => {
     setInputTextIsFocus(true);
   };
 
-  const searchProductHandler = (element) => {
-    navigate("products" + "/" + (element.id > 0 ? element.id : ""), {
-      state: { id: element.id },
+  const searchProductHandler = (product) => {
+    navigate("products" + "/" + (product.id > 0 ? product.id : ""), {
+      state: { id: product.id },
     });
+    setInputTextIsFocus(false);
   };
 
   const getProducts = () => {

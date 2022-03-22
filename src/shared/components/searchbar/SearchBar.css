@@ -88,9 +88,10 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  padding: 0.5rem;
+  padding: 0.4rem;
   transition: all 0.2s;
   cursor: pointer;
+  margin: 0.2rem 0;
 }
 
 .search-bar__result:hover {
