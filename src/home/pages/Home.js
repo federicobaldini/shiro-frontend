@@ -1,7 +1,6 @@
 import React from "react";
 
 import Showcase from "../components/Showcase";
-import ProductList from "../../products/components/ProductList";
 import MenuList from "../components/MenuList";
 import "./Home.css";
 
@@ -50,23 +49,17 @@ const products = [
   },
 ];
 
-const categories = [
-  { id: 1, name: "chairs", imagePath: "" },
-  { id: 2, name: "tables", imagePath: "" },
-  { id: 3, name: "sofas", imagePath: "" },
-];
-
 const Home = () => {
   return (
     <div className="home">
-      <Showcase images={images} animation={false} />
+      <Showcase images={images} animation={true} />
       {/* <div className="home-products__title">WHAT ARE YOU SEARCHING FOR?</div> */}
       {/* <MenuList categories={categories} /> */}
       <div className="home-products__title">
         DISCOVER <span style={{ color: "#e74c3c" }}>NEW</span> PRODUCTS
       </div>
       <div className="home-products__title-line"></div>
-      <ProductList products={products} />
+      <MenuList products={products} />
     </div>
   );
 };
