@@ -4,12 +4,12 @@ import MenuItem from "./MenuItem";
 import "./MenuList.css";
 
 const MenuList = (props) => {
-  const { categories } = props;
+  const { products } = props;
 
   return (
     <div className="menu-list">
-      {categories.map((category) => {
-        return <MenuItem key={category.id} category={category} />;
+      {products.map((product) => {
+        return <MenuItem key={product.id} product={product} />;
       })}
     </div>
   );
