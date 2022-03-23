@@ -1,0 +1,9 @@
+.products {
+  margin: 5rem 0 0 0;
+}
+
+.products__title {
+  margin: 0 0 0 1rem;
+  font-weight: bold;
+  font-size: 16px;
+}
