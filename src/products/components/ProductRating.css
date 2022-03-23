@@ -1,0 +1,19 @@
+.product-reviews-info__rating-dot-wrapper {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 0.1rem;
+}
+
+.product-reviews-info__rating-dot-1 {
+  background-color: #ecf0f1;
+  border-radius: 50%;
+  height: 1rem;
+  width: 100%;
+}
+
+.product-reviews-info__rating-dot-2 {
+  background-color: #e74c3c;
+  height: 1rem;
+}
