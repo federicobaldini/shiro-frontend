@@ -1,7 +1,7 @@
 import React from "react";
 
 import Card from "../../shared/components/ui/Card";
-import Button from "../../shared/components/form/Button";
+import ProductRating from "./ProductRating";
 import { Link } from "react-router-dom";
 import "./ProductItem.css";
 
@@ -28,10 +28,11 @@ const ProductItem = (props) => {
             alt="product"
           />
         </div>
+        <div className="product-item__description">{product.shortDescription}</div>
         <div className="product-item__info-bottom">
           <div className="product-item__price">{"$" + product.price}</div>
-          <div className="product-item__button-container">
-            <Button className="product-item__button">BUY</Button>
+          <div className="product-item__rating">
+            <ProductRating reviews={[]} averageRating={product.averageRating} />
           </div>
         </div>
       </Link>
