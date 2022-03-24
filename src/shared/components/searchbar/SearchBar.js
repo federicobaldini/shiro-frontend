@@ -9,13 +9,13 @@ import Backdrop from "../ui/Backdrop";
 import "./SearchBar.css";
 
 const SearchBar = (props) => {
+  const { products, initialInputText, className } = props;
+
   const [inputText, setInputText] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [inputTextIsFocus, setInputTextIsFocus] = useState(false);
   const [textTyped, setTextTyped] = useState(false);
   const navigate = useNavigate();
-
-  const { products, initialInputText } = props;
 
   useEffect(() => {
     if (initialInputText && !inputText.length && !textTyped) {
@@ -89,7 +89,7 @@ const SearchBar = (props) => {
   };
 
   return (
-    <div className="search-bar">
+    <div className={"search-bar " + className}>
       {inputTextIsFocus && (
         <Backdrop
           style={{ background: "none" }}

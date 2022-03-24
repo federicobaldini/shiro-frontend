@@ -65,3 +65,9 @@
     display: block;
   }
 }
+
+@media (max-width: 768px) {
+  .main-navigation__searchbar {
+    display: none;
+  }
+}

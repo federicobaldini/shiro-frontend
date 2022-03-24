@@ -48,7 +48,11 @@ const MainNavigation = (props) => {
             <Link to="/">SHIRO</Link>
           </h1>
         </div>
-        <SearchBar products={products} initialInputText={""} />
+        <SearchBar
+          className="main-navigation__searchbar"
+          products={products}
+          initialInputText={""}
+        />
         <nav className="main-navigation__header-nav">
           <NavLinks />
         </nav>
