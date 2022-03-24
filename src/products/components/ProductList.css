@@ -8,3 +8,10 @@
   align-items: center;
   min-height: 24rem;
 }
+
+@media (max-width: 768px) {
+  .product-list {
+    flex-direction: column;
+    justify-content: center;
+  }
+}

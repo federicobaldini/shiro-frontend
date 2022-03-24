@@ -86,3 +86,14 @@
   color: #000000;
   border-color: #ecf0f1;
 }
+
+@media (max-width: 768px) {
+  .menu-item {
+    width: 90%;
+  }
+
+  .product-item:hover {
+    height: 17rem;
+    width: 90%;
+  }
+}
