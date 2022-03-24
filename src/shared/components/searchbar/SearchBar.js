@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -24,8 +24,8 @@ const SearchBar = (props) => {
     }
     if (products) {
       setFilteredProducts(
-        products.filter((e) => {
-          return e.name.toLowerCase().includes(inputText.toLowerCase());
+        products.filter((p) => {
+          return p.name.toLowerCase().includes(inputText.toLowerCase());
         })
       );
     }
@@ -48,7 +48,7 @@ const SearchBar = (props) => {
   };
 
   const searchProductHandler = (product) => {
-    navigate("products" + "/" + (product.id > 0 ? product.id : ""), {
+    navigate("products/" + (product.id > 0 ? product.id : ""), {
       state: { id: product.id },
     });
     setInputTextIsFocus(false);

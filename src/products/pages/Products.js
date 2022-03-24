@@ -64,10 +64,7 @@ const Products = () => {
           );
         })
       ) : (
-        <React.Fragment>
-          <div className="products__title">Discover our products</div>
-          <ProductList products={products} />
-        </React.Fragment>
+        <ProductList products={products} />
       )}
     </div>
   );

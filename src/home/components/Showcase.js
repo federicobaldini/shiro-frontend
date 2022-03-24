@@ -49,8 +49,8 @@ const Showcase = (props) => {
     return newId;
   };
 
-  const transitionEndHandler = (e) => {
-    if (e.propertyName === "transform") {
+  const transitionEndHandler = (event) => {
+    if (event.propertyName === "transform") {
       let temp = [...elements];
       if (shiftRight) {
         const lastElement = temp.shift();
@@ -84,7 +84,7 @@ const Showcase = (props) => {
           transform: "translateX(" + actualIndex * 53 + "rem)",
           transition: !transitionEnabled ? "none" : undefined,
         }}
-        onTransitionEnd={(e) => transitionEndHandler(e)}
+        onTransitionEnd={transitionEndHandler}
       >
         {elements.map((element, index) => {
           return (
