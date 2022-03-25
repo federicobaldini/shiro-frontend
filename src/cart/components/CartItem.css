@@ -1,0 +1,11 @@
+.cart-item {
+  height: 5rem;
+  width: 50rem;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .cart-item {
+    width: 90%;
+  }
+}
