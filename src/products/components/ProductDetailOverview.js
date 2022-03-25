@@ -1,18 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import Card from "../../shared/components/ui/Card";
 import Button from "../../shared/components/form/Button";
 import ColorSelector from "./ColorSelector";
 import CustomSelector from "./CustomSelector";
+import { CartContext } from "../../shared/context/cart-context";
 import "./ProductDetailOverview.css";
 
 const ProductDetailOverview = (props) => {
   const { product } = props;
+  const cart = useContext(CartContext);
 
   const [actualImage, setActualImage] = useState(product.imagesPath[0]);
 
   const changeImageHandler = (imagePath) => {
     setActualImage(imagePath);
+  };
+
+  const addProductHandler = (event) => {
+    event.preventDefault();
+    cart.addProduct(product);
   };
 
   return (
@@ -42,11 +49,16 @@ const ProductDetailOverview = (props) => {
         <div className="product-detail-overview__name">
           {product.name.toUpperCase()}
         </div>
-        <div className="product-detail-overview__price">{"$" + product.price}</div>
+        <div className="product-detail-overview__price">
+          {"$" + product.price}
+        </div>
         <div className="product-detail-overview__description">
           {product.description}
         </div>
-        <form className="product-detail-overview__form">
+        <form
+          className="product-detail-overview__form"
+          onSubmit={addProductHandler}
+        >
           <ColorSelector
             className="product-detail-overview__colors"
             colors={product.colors}
