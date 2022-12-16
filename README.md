@@ -3,15 +3,15 @@
 Demo project of an e-commerce web application to buy products and manage sales. Frontend made using React.
 
 <p align="center">
-  <img src="https://github.com/federicobaldini/shiro-frontend/blob/master/home.png" alt="login" />
+  <img src="https://github.com/federicobaldini/shiro-frontend/blob/master/home.png" alt="home" />
 </p>
 
 <p align="center">
-  <img src="https://github.com/federicobaldini/shiro-frontend/blob/master/products.png" alt="add" />
+  <img src="https://github.com/federicobaldini/shiro-frontend/blob/master/products.png" alt="products" />
 </p>
 
 <p align="center">
-  <img src="https://github.com/federicobaldini/shiro-frontend/blob/master/product.png" alt="list" />
+  <img src="https://github.com/federicobaldini/shiro-frontend/blob/master/product.png" alt="product" />
 </p>
 
 ## Available Scripts
